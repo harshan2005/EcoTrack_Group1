@@ -1,0 +1,507 @@
+
+/* Main application */
+.app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #f4f7f5;
+  color: #26352c;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e8e2;
+  position: relative;
+  z-index: 100;
+}
+
+.header h1 {
+  margin: 0 0 6px;
+  color: #247447;
+  font-size: 30px;
+}
+
+.header p {
+  margin: 0;
+  color: #68776d;
+  font-size: 14px;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-header span {
+  color: #435349;
+  font-weight: 600;
+}
+
+.user-header button {
+  padding: 10px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #c0392b;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.user-header button:hover {
+  background: #a93226;
+}
+
+/* Main Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  max-width: none;
+  margin: 0;
+  padding: 28px 30px;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 22px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e9e4;
+  border-radius: 12px;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin: 0 0 20px;
+  padding: 0 10px;
+  color: #247447;
+  font-size: 19px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar nav button {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #435349;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar nav button:hover {
+  background: #edf6ef;
+  color: #247447;
+}
+
+.sidebar nav button.active {
+  background: #247447;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e2e9e4;
+  border-radius: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.main-content > h2:first-child {
+  margin-bottom: 12px;
+  color: #26352c;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.main-content > p {
+  color: #68776d;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.section-title {
+  margin: 32px 0 20px;
+  color: #26352c;
+  font-size: 23px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 24px 0 32px;
+}
+
+.card {
+  min-width: 0;
+  padding: 26px;
+  background: #f7faf8;
+  border: 1px solid #e1ebe3;
+  border-radius: 12px;
+}
+
+.card h3 {
+  margin: 0 0 16px;
+  color: #435349;
+  font-size: 16px;
+}
+
+.card .number {
+  margin: 0 0 10px;
+  color: #247447;
+  font-size: 32px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.card span {
+  color: #78867c;
+  font-size: 13px;
+}
+
+.total-card {
+  background: #eaf5ed;
+  border-color: #d4e9d9;
+}
+
+.total-card .number {
+  color: #17683a;
+}
+
+/* Emission Chart */
+.emission-chart-section {
+  width: 100%;
+  margin: 35px 0;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e1ebe3;
+  border-radius: 12px;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.chart-header h2 {
+  margin: 0 0 8px;
+  color: #26352c;
+  font-size: 21px;
+}
+
+.chart-header p {
+  margin: 0;
+  color: #78867c;
+  font-size: 14px;
+}
+
+.chart-toggle {
+  display: flex;
+  gap: 8px;
+  padding: 5px;
+  background: #f0f5f1;
+  border-radius: 8px;
+}
+
+.chart-toggle button {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #435349;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.chart-toggle button.selected {
+  background: #247447;
+  color: #ffffff;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 12px;
+  width: 100%;
+  min-height: 230px;
+  padding: 15px 5px 0;
+  border-bottom: 1px solid #e1ebe3;
+}
+
+.chart-column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 0;
+  height: 230px;
+  gap: 8px;
+}
+
+.chart-value {
+  color: #435349;
+  font-size: 11px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.chart-bar-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 65%;
+  height: 165px;
+}
+
+.chart-bar {
+  width: 100%;
+  min-height: 0;
+  background: #48a66b;
+  border-radius: 7px 7px 0 0;
+  transition: height 0.3s ease;
+}
+
+.chart-bar:hover {
+  background: #247447;
+}
+
+.chart-label {
+  color: #68776d;
+  font-size: 12px;
+  text-align: center;
+}
+
+.chart-unit {
+  margin: 15px 0 0;
+  color: #78867c;
+  font-size: 12px;
+  text-align: center;
+}
+
+.no-chart-data {
+  padding: 50px 10px;
+  color: #78867c;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* About EcoTrack */
+.info-section {
+  width: 100%;
+  margin-top: 28px;
+  padding: 24px;
+  background: #f7faf8;
+  border-left: 4px solid #247447;
+  border-radius: 8px;
+}
+
+.info-section h2 {
+  margin: 0 0 12px;
+  color: #247447;
+  font-size: 20px;
+}
+
+.info-section p {
+  margin: 0;
+  color: #68776d;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Messages */
+.auth-feedback,
+.loading-message {
+  width: 100%;
+  margin: 16px 0;
+  padding: 13px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.auth-feedback {
+  background: #fff1ef;
+  border: 1px solid #f2d0cb;
+  color: #a93226;
+}
+
+.loading-message {
+  background: #edf6ef;
+  color: #247447;
+}
+
+button:focus-visible {
+  outline: 3px solid #8bc6a0;
+  outline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .main-content {
+    padding: 22px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .app {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 16px;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .user-header {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 14px;
+    overflow: visible;
+  }
+
+  .sidebar {
+    height: auto;
+    max-height: none;
+    padding: 16px;
+    overflow: visible;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 12px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar nav button {
+    width: auto;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .main-content {
+    height: auto;
+    min-height: 400px;
+    padding: 20px 16px;
+    overflow: visible;
+  }
+
+  .main-content > h2:first-child {
+    font-size: 23px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card .number {
+    font-size: 28px;
+  }
+
+  .info-section {
+    padding: 18px;
+  }
+
+  /* Chart Mobile Responsive */
+  .emission-chart-section {
+    padding: 18px 12px;
+  }
+
+  .chart-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .chart-bars {
+    gap: 5px;
+  }
+
+  .chart-column {
+    gap: 6px;
+  }
+
+  .chart-bar-track {
+    width: 75%;
+  }
+
+  .chart-value {
+    font-size: 9px;
+  }
+
+  .chart-label {
+    font-size: 10px;
+  }
+}
